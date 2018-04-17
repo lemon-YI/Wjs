@@ -1,0 +1,17 @@
+@charset "utf-8";
+//
+//a{
+// color: @mainColor;
+//}
+@import "variables";
+@import "mixin";
+@import "partner";
+
+@col:15;
+@pad:12px;
+/*内置函数  运算*/
+.col-xs-1{
+  width: @col/18;
+  padding: 0 @pad/2;
+  color: lighten(red,10%);
+}

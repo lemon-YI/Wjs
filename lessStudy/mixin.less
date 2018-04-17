@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*样式类名 mixin  混入*/
+//组合样式  左浮动 右浮动  宽度50% 左边框 右边框
+//.f_left{
+//  float: left;
+//}
+//.f_right{
+//  float: right;
+//}
+//.b_left{
+//  border-left: 1px solid #cccccc;
+//}
+//.b_right{
+//  border-right: 1px solid #cccccc;
+//}
+
+//  需要左浮动 左边框
+//通过 左浮动 左边框 混入 到了FLBL
+//.FLBL{
+//  .f_left();
+//  .b_left();
+//}
+
+/*函数 mixin*/
+// js var a = function(){} function a(n)
+//类名后加括号
+.f_left(){
+  float: left;
+}
+.f_right(){
+  float: right;
+}
+.b_left(){
+  border-left: 1px solid #e0e0e0;
+}
+.b_right(){
+  border-right: 1px solid #e0e0e0;
+}
+/*定义一个可以传参的方法*/
+//@direction 定义参数  但是一定要有默认的变量值
+//使用变量  直接使用变量名称 就可以
+//拼接变量的时候 @{direction}
+.border(@direction:left){
+  border-@{direction}:1px solid #ccc;
+  border-radius: 10px;
+  //border-left: 1px solid #e0e0e0;
+  //border-right: 1px solid #e0e0e0;
+}
+//圆角方法
+.borderRadius(@width:10px){
+  border-radius: @width;
+  -webkit-border-radius: @width;
+  -moz-border-radius: @width;
+  -ms-border-radius: @width;
+  -o-border-radius: @width;
+}
+.FLBL{
+  .f_left();
+  .border(top);
+  .borderRadius(200px);
+}

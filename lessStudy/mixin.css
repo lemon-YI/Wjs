@@ -1,0 +1,14 @@
+@charset "utf-8";
+/*样式类名 mixin  混入*/
+/*函数 mixin*/
+/*定义一个可以传参的方法*/
+.FLBL {
+  float: left;
+  border-top: 1px solid #ccc;
+  border-radius: 10px;
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+}
